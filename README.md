@@ -16,3 +16,8 @@ This repo contains a a simple test project using express.js
 ## Testing
 
 1. Run `yarn test`
+
+## Check if the server is running
+
+1. Open your browser and go to `http://localhost:3000/`
+2. Open your browser and go to `http://localhost:3000/welcome`
