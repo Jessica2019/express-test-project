@@ -1,0 +1,27 @@
+{
+    "name": "express-test-project",
+    "version": "1.0.0",
+    "description": "A test project for an express.js web application",
+    "main": "index.js",
+    "repository": "git@github.com:XP-Venture-Labs/express-test-project.git",
+    "author": "Chris Stark <chris@starkfree.com>",
+    "license": "MIT",
+    "private": false,
+    "scripts": {
+        "start": "node dist/index.js",
+        "build": "tsc",
+        "dev": "ts-node src/index.ts",
+        "test": "jest"
+    },
+    "dependencies": {
+        "express": "^4.19.2"
+    },
+    "devDependencies": {
+        "@types/express": "^4.17.21",
+        "@types/jest": "^29.5.12",
+        "@types/node": "^20.14.10",
+        "jest": "^29.7.0",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.5.3"
+    }
+}
