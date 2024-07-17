@@ -1,13 +1,10 @@
 // __tests__/testServer.ts
 import app from './index';
 
-const TEST_PORT = 3006;
 
-export const APP_URL = `http://localhost:${TEST_PORT}`;
-
-export const startServer = (): Promise<any> => {
+export const startServer = (port: number): Promise<any> => {
   return new Promise((resolve, reject) => {
-    const server = app.listen(TEST_PORT, (err?: Error) => {
+    const server = app.listen(port, (err?: Error) => {
       if (err) {
         reject(err);
       } else {

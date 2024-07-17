@@ -1,12 +1,15 @@
 import request from "supertest";
 import axios from "axios";
 import  { mocked } from "jest-mock";
-import { APP_URL, startServer, stopServer } from "../src/testSetup";
+import { startServer, stopServer } from "../src/testSetup";
+
+const speciesPort = 3003;
+const APP_URL = `http://localhost:${speciesPort}`;
 
 let server: any;
 
 beforeAll(async () => {
-  server = await startServer();
+  server = await startServer(speciesPort);
 });
 
 afterAll(async () => {

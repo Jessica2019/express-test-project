@@ -40,15 +40,14 @@ router.post("/", async (req: Request, res: Response) => {
   if (!name || typeof name !== 'string') {
     return res.status(400).json({ error: 'Invalid or missing "name" field in request body.' });
   }
+  if (!max_moves || typeof max_moves !== 'number' || max_moves <= 0) {
+    return res.status(400).json({ error: 'Invalid or missing "max_moves" field in request body. Must be a positive number.' });
+  }
   
   const response = await axios.get(`${POKEMON_SPECIES_API}/${name}`);
   if (response.status === 404) {
     // Not Found Error
     return res.status(400).json({ error: 'Invalid "name" field in request body. Not Found error' });
-  }
-
-  if (!max_moves || typeof max_moves !== 'number' || max_moves <= 0) {
-    return res.status(400).json({ error: 'Invalid or missing "max_moves" field in request body. Must be a positive number.' });
   }
 
   try {

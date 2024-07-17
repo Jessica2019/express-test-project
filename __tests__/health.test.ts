@@ -1,10 +1,12 @@
 import request from "supertest";
-import { APP_URL, startServer, stopServer } from "../src/testSetup";
+import { startServer, stopServer } from "../src/testSetup";
 
+const healthPort = 3002;
+const APP_URL = `http://localhost:${healthPort}`;
 let server: any;
 
 beforeAll(async () => {
-  server = await startServer();
+  server = await startServer(healthPort);
 });
 
 afterAll(async () => {
